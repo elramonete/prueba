@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class TracerApiBean {
 
   public TracerAPI getTracerAPI() {
-    TracerAPI tracerAPI  = new TracerAPI() {
+      TracerAPI tracerAPI  = new TracerAPI() {
       @Override
       public <T> void trace(T result) {
         System.out.println(result);
