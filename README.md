@@ -4,7 +4,9 @@ Teneis una interfaz swagger disponible para hacer las pruebas necesarias en http
 
 Generar el .jar, ejecutar el comando `mvn spring-boot:build-image` en la raiz del proyecto
 
-Hemos incluido el jar del traceo y se hemos comprado que funciona como esperabamos en el terminal. 
+Hemos incluido el jar del traceo y se hemos comprado que funciona como esperabamos en el terminal.
+
+Para arrancar el proyecto ejecutamos 'spring-boot:run' en la raiz del proyecto.
 
 Enunciado
 =================
