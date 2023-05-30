@@ -1,6 +1,7 @@
 package arcis.ramon.calculadora.application;
 
 import arcis.ramon.calculadora.domain.dto.CalculadoraDto;
+import arcis.ramon.calculadora.domain.exceptions.EntityNotFoundException;
 import arcis.ramon.calculadora.domain.ports.CalculadoraServicePort;
 
 import arcis.ramon.calculadora.infrastructure.controller.TracerApiBean;
@@ -19,7 +20,7 @@ public class CalculadoraUseCase implements CalculadoraServicePort {
     tracerAPI.trace("CalculadoraUseCase.sum");
     tracerAPI.trace(CalculadoraDto.builder().num1(num1).num2(num2).resultado(num1+num2).build());
     if(num1 == 0 && num2 == 0) {
-      throw new RuntimeException("No se puede sumar 0 + 0");
+      throw new EntityNotFoundException("No se puede sumar 0 + 0");
     } else if(num1 == 0) {
       tracerAPI.trace("CalculadoraUseCase.subtract: num1 == 0");
       return CalculadoraDto.builder().num1(num1).num2(num2).resultado(num2).build();
@@ -37,7 +38,7 @@ public class CalculadoraUseCase implements CalculadoraServicePort {
     tracerAPI.trace("CalculadoraUseCase.subtract");
     tracerAPI.trace(CalculadoraDto.builder().num1(num1).num2(num2).resultado(num1-num2).build());
     if(num1 == 0 && num2 == 0) {
-      throw new RuntimeException("No se puede restar 0 - 0");
+      throw new EntityNotFoundException("No se puede restar 0 - 0");
     } else if(num1 == 0) {
       tracerAPI.trace("CalculadoraUseCase.subtract: num1 == 0");
       return CalculadoraDto.builder().num1(num1).num2(num2).resultado(-num2).build();
